@@ -18,14 +18,14 @@ class CPA_CPD():
         driver_builder = DriverBuilder()
         driver = driver_builder.get_driver(headless=False)
         driver.get(self.web_site_address)
-        element_id = driver.find_element_by_id("cphContent_C001_txtUserName")
+        element_id = driver.find_element_by_id("ContentPlaceholder_C001_txtUserName")
         self.wait_until_page_refreshed(element_id)
         element_id.clear()
         element_id.send_keys(id_info) #id_info
-        element_pw = driver.find_element_by_id("cphContent_C001_txtPassword")
+        element_pw = driver.find_element_by_id("ContentPlaceholder_C001_txtPassword")
         element_pw.clear()
         element_pw.send_keys(pw_info) #pw_info
-        driver.find_element_by_id("cphContent_C001_btnLogin").click()
+        driver.find_element_by_id("ContentPlaceholder_C001_btnLogin").click()
         return driver
 
     def main(self):
